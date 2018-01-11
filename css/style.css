@@ -105,9 +105,9 @@ h4 {
 	top: 0;
 	left: 0;
 	box-sizing: border-box;
-	padding: 0 0 0 40px;
+	padding: 0 0 0 50px;
 	z-index: -1;
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .card .details p {
