@@ -1,27 +1,29 @@
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$col-bg: #FFC568;
+$col-lttr: #763C8C;
+$col-line: #FFFFFF;
+$to-mobile: 520px;
+
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html, body {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #FFC568;
+  @include flex-center();
+  
+  background-color: $col-bg;
   font-size: 62.5%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-@media screen and (max-width: 520px) {
-  html, body {
+  
+  @media screen and (max-width: $to-mobile) {
     /* don't know how to set default units to rem in mojs :(( */
   }
 }
@@ -42,27 +44,28 @@ html, body {
   height: 100%;
 }
 
+
 .line {
   fill: none;
-  stroke: #FFFFFF;
+  stroke: $col-line;
   stroke-width: 8;
   stroke-linecap: round;
   stroke-miterlimit: 10;
 }
 
 .lttr {
-  fill: #763C8C;
+  fill: $col-lttr;
 }
 
 .sound {
   position: fixed;
-  color: #763C8C;
+  color: $col-lttr;
   font-size: 1.6rem;
   bottom: 1rem;
   right: 1rem;
   text-decoration: underline;
   cursor: default;
-}
-.sound--off {
-  text-decoration: line-through;
+  &--off {
+    text-decoration: line-through;
+  }
 }
